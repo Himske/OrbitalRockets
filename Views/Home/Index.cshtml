@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Mission Control";
+}
+
+<section class="hero-panel" aria-labelledby="mission-title">
+    <div class="hero-copy">
+        <span class="eyebrow">Orbital flight systems / online</span>
+        <h1 id="mission-title">The next frontier starts here.</h1>
+        <p>Coordinate launch vehicles, assemble flight crews, and keep every mission on course from one command deck.</p>
+        <a class="btn btn-primary" asp-controller="Rocket" asp-action="Index">Open rocket registry</a>
+    </div>
+</section>
+
+<section aria-label="Mission operations">
+    <h2>Mission operations</h2>
+    <div class="mission-links">
+        <a class="mission-link" asp-controller="Rocket" asp-action="Index">
+            <strong>Launch vehicles</strong>
+            <span>Review rocket specifications and manufacturers &rarr;</span>
+        </a>
+        <a class="mission-link" asp-controller="RocketCrew" asp-action="Index">
+            <strong>Flight crews</strong>
+            <span>Manage crews assigned to each vehicle &rarr;</span>
+        </a>
+        <a class="mission-link" asp-controller="CrewMember" asp-action="Index">
+            <strong>Crew roster</strong>
+            <span>Track personnel and mission roles &rarr;</span>
+        </a>
+    </div>
+</section>

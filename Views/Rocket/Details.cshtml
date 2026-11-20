@@ -1,0 +1,30 @@
+@model Rocket
+
+@{
+    ViewData["Title"] = "Rocket details";
+}
+
+<h1>Rocket details</h1>
+
+<dl class="row">
+    <dt class="col-sm-2">Rocket name</dt>
+    <dd class="col-sm-10">@Model.RocketName</dd>
+    <dt class="col-sm-2">Manufacturer</dt>
+    <dd class="col-sm-10">@Model.Manufacturer</dd>
+</dl>
+
+<h2>Crews</h2>
+@if (Model.Crews.Count == 0) {
+    <p>No crews have been assigned to this rocket.</p>
+} else {
+    <ul>
+    @foreach (var crew in Model.Crews) {
+        <li><a asp-controller="RocketCrew" asp-action="Details" asp-route-id="@crew.Id">@crew.CrewName</a></li>
+    }
+    </ul>
+}
+
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to rockets</a>
+</p>

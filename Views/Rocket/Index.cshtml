@@ -1,0 +1,32 @@
+@model IEnumerable<Rocket>
+
+@{
+    ViewData["Title"] = "Rockets";
+}
+
+<h1>Rockets</h1>
+
+<p><a asp-action="Create">Create new rocket</a></p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Rocket name</th>
+            <th>Manufacturer</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var rocket in Model) {
+            <tr>
+                <td>@rocket.RocketName</td>
+                <td>@rocket.Manufacturer</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@rocket.Id">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@rocket.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@rocket.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

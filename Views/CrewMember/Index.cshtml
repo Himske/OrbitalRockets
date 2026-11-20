@@ -1,0 +1,25 @@
+@model IEnumerable<CrewMember>
+@{ ViewData["Title"] = "Crew members"; }
+<h1>Crew members</h1>
+<p><a asp-action="Create">Create new crew member</a></p>
+<table class="table">
+    <thead><tr><th>First name</th><th>Last name</th><th>Role</th><th>Crew</th><th>Rocket</th><th></th></tr></thead>
+    <tbody>
+    @foreach (var member in Model) {
+        <tr>
+            <td>@member.FirstName</td><td>@member.LastName</td><td>@member.Role</td>
+            <td><a asp-controller="RocketCrew" asp-action="Details" asp-route-id="@member.RocketCrewId">@member.RocketCrew?.CrewName</a></td>
+            <td>
+                @if (member.RocketCrew?.Rocket is { } rocket) {
+                    <a asp-controller="Rocket" asp-action="Details" asp-route-id="@rocket.Id">@rocket.RocketName</a>
+                }
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@member.Id">Details</a> |
+                <a asp-action="Edit" asp-route-id="@member.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@member.Id">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

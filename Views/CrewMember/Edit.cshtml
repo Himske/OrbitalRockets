@@ -1,0 +1,9 @@
+@model WebAppMVC1.ViewModels.CrewMemberForm
+@{ ViewData["Title"] = "Edit crew member"; }
+<h1>Edit crew member</h1>
+<form asp-action="Edit" asp-route-id="@Model.Id" method="post">
+    <partial name="_Form" model="Model" />
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index">Back to crew members</a>
+</form>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

@@ -1,0 +1,12 @@
+@model WebAppMVC1.ViewModels.CrewMemberForm
+@{ ViewData["Title"] = "Create crew member"; }
+<h1>Create crew member</h1>
+@if (Model.Crews.Count == 0) {
+    <p>Create a <a asp-controller="RocketCrew" asp-action="Create">crew</a> before assigning a member.</p>
+}
+<form asp-action="Create" method="post">
+    <partial name="_Form" model="Model" />
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Index">Back to crew members</a>
+</form>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

@@ -1,0 +1,26 @@
+@model WebAppMVC1.ViewModels.CrewMemberForm
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="mb-3">
+    <label asp-for="FirstName" class="form-label"></label>
+    <input asp-for="FirstName" class="form-control" />
+    <span asp-validation-for="FirstName" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="LastName" class="form-label"></label>
+    <input asp-for="LastName" class="form-control" />
+    <span asp-validation-for="LastName" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Role" class="form-label"></label>
+    <select asp-for="Role" asp-items="Html.GetEnumSelectList<CrewRole>()" class="form-select">
+        <option value="">Select a role</option>
+    </select>
+    <span asp-validation-for="Role" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="RocketCrewId" class="form-label"></label>
+    <select asp-for="RocketCrewId" asp-items="Model.Crews" class="form-select">
+        <option value="">Select a crew</option>
+    </select>
+    <span asp-validation-for="RocketCrewId" class="text-danger"></span>
+</div>

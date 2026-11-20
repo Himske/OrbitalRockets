@@ -1,0 +1,20 @@
+@model IEnumerable<RocketCrew>
+@{ ViewData["Title"] = "Crews"; }
+<h1>Crews</h1>
+<p><a asp-action="Create">Create new crew</a></p>
+<table class="table">
+    <thead><tr><th>Crew name</th><th>Rocket</th><th></th></tr></thead>
+    <tbody>
+    @foreach (var crew in Model) {
+        <tr>
+            <td>@crew.CrewName</td>
+            <td><a asp-controller="Rocket" asp-action="Details" asp-route-id="@crew.RocketId">@crew.Rocket?.RocketName</a></td>
+            <td>
+                <a asp-action="Details" asp-route-id="@crew.Id">Details</a> |
+                <a asp-action="Edit" asp-route-id="@crew.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@crew.Id">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

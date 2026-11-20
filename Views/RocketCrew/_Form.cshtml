@@ -1,0 +1,14 @@
+@model WebAppMVC1.ViewModels.RocketCrewForm
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="mb-3">
+    <label asp-for="CrewName" class="form-label"></label>
+    <input asp-for="CrewName" class="form-control" />
+    <span asp-validation-for="CrewName" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="RocketId" class="form-label"></label>
+    <select asp-for="RocketId" asp-items="Model.Rockets" class="form-select">
+        <option value="">Select a rocket</option>
+    </select>
+    <span asp-validation-for="RocketId" class="text-danger"></span>
+</div>
