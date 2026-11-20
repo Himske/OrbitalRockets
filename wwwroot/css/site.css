@@ -36,12 +36,11 @@ body {
   color: var(--space-text);
   background-color: var(--space-ink);
   background-image:
-    radial-gradient(ellipse at 18% 0%, rgba(52, 94, 157, 0.2), transparent 38rem),
-    radial-gradient(ellipse at 88% 30%, rgba(31, 111, 130, 0.1), transparent 34rem),
-    radial-gradient(rgba(222, 237, 255, 0.34) 0.7px, transparent 0.9px),
-    radial-gradient(rgba(112, 166, 230, 0.23) 0.7px, transparent 0.9px);
-  background-size: auto, auto, 83px 83px, 137px 137px;
-  background-position: center, center, 0 0, 29px 41px;
+    linear-gradient(rgba(5, 9, 20, 0.72), rgba(5, 9, 20, 0.78)),
+    url("../images/westerlund-2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   font-family: "Segoe UI", Inter, system-ui, -apple-system, sans-serif;
   line-height: 1.65;
 }

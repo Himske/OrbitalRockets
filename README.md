@@ -2,6 +2,8 @@
 
 An ASP.NET Core MVC application for managing rockets and the crews assigned to them. The interface uses a dark, starfield-inspired mission-control theme.
 
+The background uses the Hubble image [Westerlund 2](https://esahubble.org/images/heic1509a/), credited to NASA, ESA, the Hubble Heritage Team (STScI/AURA), A. Nota (ESA/STScI), and the Westerlund 2 Science Team. It is available under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); the displayed image is cropped and darkened.
+
 ## Features
 
 - Create, view, edit, and delete rocket records, including manufacturer details.
